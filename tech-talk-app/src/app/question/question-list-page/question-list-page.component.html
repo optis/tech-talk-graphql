@@ -1,0 +1,3 @@
+<h1>Questions</h1>
+<app-question-list [questions]="result?.questions"></app-question-list>
+<app-pagination [currentPage]="page" [totalElements]="result?.questionCount" [size]="size" (onChange)="changePage($event)"></app-pagination>

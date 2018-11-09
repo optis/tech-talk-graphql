@@ -1,0 +1,13 @@
+@import "~src/theme";
+
+h1 {
+  @include title;
+}
+
+app-question-list {
+  margin-bottom: 10px;
+}
+
+app-pagination {
+  display: block;
+}

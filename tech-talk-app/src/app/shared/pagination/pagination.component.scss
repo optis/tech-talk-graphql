@@ -1,0 +1,46 @@
+@import "~src/theme";
+
+ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      vertical-align: middle;
+      line-height: 25px;
+      text-align: center;
+      transition: background .3s;
+      cursor: pointer;
+
+      &.disabled, &.disabled:hover, &.disabled:active {
+        cursor: not-allowed;
+        background-color: transparent;
+        color: rgba(0, 0, 0, .5);
+      }
+
+      &.active, &.active:hover, &.active:active {
+        background-color: lighten($primary-color, 20%);
+        cursor: default;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+      }
+
+      &:active {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}

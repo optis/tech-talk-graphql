@@ -1,0 +1,4 @@
+<div [formGroup]="formGroup">
+  <input type="text" [formControlName]="name" (input)="onChange.emit($event.target.value)" />
+  <p>{{length}}/{{maxLength}} characters</p>
+</div>

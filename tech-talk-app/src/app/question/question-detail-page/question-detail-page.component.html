@@ -1,0 +1,15 @@
+<article *ngIf="question != null">
+  <h1>
+    {{question.title}}
+    <span class="filler"></span>
+    <span class="tag" *ngIf="question.answers.length > 0">Answered</span>
+  </h1>
+  <app-post-details [answer]="false" [post]="question.firstPost"></app-post-details>
+  <div class="divider">
+    <span class="filler"></span>
+    <span class="material-icons">chat_bubble_outline</span>
+    <small>{{question.answers.length}} answer(s)</small>
+  </div>
+  <app-post-details *ngFor="let answer of question.answers" [post]="answer" [answer]="true"></app-post-details>
+  <app-post-form [input]="newAnswer" (onSave)="createAnswer($event)"></app-post-form>
+</article>

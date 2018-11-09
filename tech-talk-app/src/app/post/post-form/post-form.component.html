@@ -1,0 +1,7 @@
+<h2>Your answer</h2>
+<form [formGroup]="form" (submit)="save()">
+  <app-count-textarea [rows]="5" [maxLength]="1000" [formGroup]="form" name="content"
+                      (onChange)="updateContent($event)">
+  </app-count-textarea>
+  <button [disabled]="form.invalid">Answer</button>
+</form>

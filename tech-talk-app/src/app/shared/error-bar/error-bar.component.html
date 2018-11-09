@@ -1,0 +1,7 @@
+<div *ngIf="messages.length > 0">
+  <p *ngFor="let message of messages">
+    <span class="material-icons">error_outline</span>
+    {{message}}
+  </p>
+  <a *ngIf="messages.length > 0" (click)="messages = []"><span class="material-icons">clear</span></a>
+</div>

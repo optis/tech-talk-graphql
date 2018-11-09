@@ -1,0 +1,53 @@
+@import "~src/theme.scss";
+
+$footer-height: 40px;
+
+h1 {
+  @include title;
+}
+
+p {
+  opacity: .7;
+  margin: 5px 0;
+}
+
+footer {
+  display: flex;
+  line-height: $footer-height;
+
+  a {
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+    line-height: $footer-height;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  strong {
+    font-weight: 500;
+    opacity: .8;
+    margin-right: 10px;
+  }
+
+  small {
+    font-weight: 300;
+    opacity: .6;
+    margin-right: 10px;
+  }
+
+  .material-icons {
+    line-height: $footer-height;
+    margin-right: 5px;
+    opacity: .6;
+  }
+
+  .filler {
+    flex-grow: 1;
+  }
+}

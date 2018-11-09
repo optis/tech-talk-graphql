@@ -1,0 +1,3 @@
+<h1>People</h1>
+<app-profile-list [people]="result?.profiles"></app-profile-list>
+<app-pagination [currentPage]="page" [totalElements]="result?.profileCount" [size]="size" (onChange)="changePage($event)"></app-pagination>

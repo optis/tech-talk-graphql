@@ -1,0 +1,59 @@
+@import "~src/theme";
+
+article {
+  @include card;
+
+  .filler {
+    flex-grow: 1;
+  }
+
+  h1 {
+    @include title;
+    margin-bottom: 0;
+    display: flex;
+
+    .tag {
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: uppercase;
+      background-color: $tertiary-color;
+      padding: 3px 5px;
+      margin-bottom: 8px;
+    }
+  }
+
+  app-post-details {
+    margin: 0 -20px;
+    padding: 20px 20px;
+    display: inline-block;
+    border-bottom: solid 1px rgba(0, 0, 0, .2);
+    width: calc(100% + 40px);
+  }
+
+  app-post-form {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .divider {
+    display: flex;
+    background-color: darken($secondary-background-color, 10%);
+    margin: -1px -20px 0;
+    padding: 5px 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, .2);
+    color: black;
+
+    .material-icons {
+      line-height: 32px;
+      margin-right: 5px;
+      opacity: .6;
+    }
+
+    small {
+      line-height: 32px;
+      opacity: .6;
+    }
+  }
+}

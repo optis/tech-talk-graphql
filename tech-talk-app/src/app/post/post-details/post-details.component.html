@@ -1,0 +1,12 @@
+<p>{{post.content}}</p>
+<footer>
+  <a [routerLink]="['/people', post.author.id]">
+    <img [src]="post.author.avatar" />
+    <strong>{{post.author.username}}</strong>
+  </a>
+  <small>
+    <span *ngIf="answer">Answered</span>
+    <span *ngIf="!answer">Asked</span>
+    {{post.postedAt | date:'MMM d, yyyy'}}
+  </small>
+</footer>

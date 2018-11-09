@@ -1,0 +1,14 @@
+@import "~src/theme";
+
+h1 {
+  @include title;
+}
+
+app-profile-list {
+  margin-bottom: 10px;
+}
+
+app-pagination {
+  display: block;
+  width: 100%;
+}

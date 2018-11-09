@@ -1,0 +1,18 @@
+<article>
+  <img [src]="profile?.avatar" />
+  <h2>
+    {{profile?.username}}
+    <small>{{profile?.title}}</small>
+  </h2>
+  <blockquote>"{{profile?.bio}}"</blockquote>
+  <footer>
+    <dl>
+      <dd>{{profile?.questionCount}}</dd>
+      <dt>questions</dt>
+    </dl>
+    <dl>
+      <dd>{{profile?.answerCount}}</dd>
+      <dt>answers</dt>
+    </dl>
+  </footer>
+</article>

@@ -1,0 +1,13 @@
+@import "theme";
+
+body {
+  background-color: $primary-background-color;
+  padding: 0;
+  margin: 0;
+  font-family: $primary-font;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $primary-font;
+}

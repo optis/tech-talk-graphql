@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  margin: -10px;
+}
+
+app-profile-list-item {
+  display: block;
+  float: left;
+  width: calc(100% / 3);
+  padding: 10px;
+  height: 215px;
+}
+
+:host:after {
+  content: '';
+  clear: both;
+  display: table;
+}

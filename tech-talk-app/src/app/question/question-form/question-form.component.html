@@ -1,0 +1,16 @@
+<h2>Your question</h2>
+<form [formGroup]="form" (submit)="save()">
+  <div class="form-group">
+    <label>Title</label>
+    <app-count-textfield [maxLength]="100" [formGroup]="form" name="title"
+                         (onChange)="updateTitle($event)">
+    </app-count-textfield>
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    <app-count-textarea [rows]="5" [maxLength]="1000" [formGroup]="form" name="content"
+                        (onChange)="updateContent($event)">
+    </app-count-textarea>
+  </div>
+  <button [disabled]="form.invalid">Ask</button>
+</form>

@@ -1,0 +1,56 @@
+type Query {
+    questions(pagination: Pagination!): [Question]
+    question(id: ID!): Question
+    questionCount: Int
+    profiles(pagination: Pagination!): [Profile]
+    profile(id: ID!): Profile
+    profileCount: Int
+}
+
+type Mutation {
+    createQuestion(input: QuestionInput!): Question
+    createAnswer(input: PostInput!): Post
+}
+
+type Question {
+    id: ID!
+    title: String
+    firstPost: Post
+    answers: [Post]
+    answerCount: Int
+}
+
+type Post {
+    id: ID!
+    content: String
+    excerpt: String
+    author: Profile
+    postedAt: ISODate
+}
+
+type Profile {
+    id: ID!
+    username: String
+    title: String
+    bio: String
+    avatar: String
+    questionCount: Int
+    answerCount: Int
+}
+
+input QuestionInput {
+    title: String!
+    content: String!
+}
+
+input PostInput {
+    questionId: ID!
+    content: String!
+}
+
+input Pagination {
+    page: Int!
+    size: Int!
+}
+
+scalar ISODate

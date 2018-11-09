@@ -1,0 +1,10 @@
+@import "~src/theme";
+
+.form-group {
+  margin: 10px 0;
+}
+
+button {
+  @include outline-button($tertiary-color);
+  font-size: 16px;
+}

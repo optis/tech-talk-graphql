@@ -1,0 +1,3 @@
+/target/
+data.sql
+!.mvn/wrapper/maven-wrapper.jar

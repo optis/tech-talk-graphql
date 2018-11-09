@@ -1,0 +1,13 @@
+@import "~src/theme";
+
+h2 {
+  font-weight: 500;
+  margin: 0 0 10px;
+  font-size: 20px;
+  opacity: .8;
+}
+
+button {
+  @include outline-button($tertiary-color);
+  font-size: 15px;
+}
