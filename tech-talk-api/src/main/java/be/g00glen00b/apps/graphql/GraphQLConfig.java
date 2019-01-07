@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Configuration
 public class GraphQLConfig {
-    @Bean
-    public Map<String, ExecutionStrategy> executionStrategies(AsyncTransactionExecutionStrategy strategy) {
-        return Collections.singletonMap("queryExecutionStrategy", strategy);
-    }
+//    @Bean
+//    public Map<String, ExecutionStrategy> executionStrategies(AsyncTransactionExecutionStrategy strategy) {
+//        return Collections.singletonMap("queryExecutionStrategy", strategy);
+//    }
 }

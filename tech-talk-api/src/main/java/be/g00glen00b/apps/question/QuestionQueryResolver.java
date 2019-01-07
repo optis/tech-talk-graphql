@@ -21,7 +21,7 @@ public class QuestionQueryResolver implements GraphQLQueryResolver {
         return questionRepository.count();
     }
 
-    public Question getQuestion(Long id) {
-        return questionRepository.findById(id).orElseThrow(() -> new QuestionNotFoundException(id));
+    public Question getQuestion(String id) {
+        return questionRepository.findById(id).orElseThrow(QuestionNotFoundException::new);
     }
 }

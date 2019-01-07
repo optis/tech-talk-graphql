@@ -23,9 +23,8 @@ type Question {
 type Post {
     id: ID!
     content: String
-    excerpt: String
     author: Profile
-    postedAt: ISODate
+    postedAt: String
 }
 
 type Profile {

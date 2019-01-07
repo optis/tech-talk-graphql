@@ -1,21 +1,18 @@
 package be.g00glen00b.apps.post;
 
+import be.g00glen00b.apps.profile.Profile;
+import be.g00glen00b.apps.profile.ProfileNotFoundException;
+import be.g00glen00b.apps.profile.ProfileRepository;
 import com.coxautodev.graphql.tools.GraphQLResolver;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class PostResolver implements GraphQLResolver<Post> {
+	private ProfileRepository profileRepository;
 
-	private static final String EXCERPT_SUFFIX = "...";
-	private static final int EXCERPT_LENGTH = 50;
-
-	public String getExcerpt(Post post) {
-		if (post.getContent() == null) {
-			return null;
-		} else if (post.getContent().length() < 50) {
-			return post.getContent();
-		} else {
-			return post.getContent().substring(0, EXCERPT_LENGTH) + EXCERPT_SUFFIX;
-		}
+	public Profile getAuthor(Post post) {
+		return profileRepository.findById(post.getAuthorId()).orElseThrow(ProfileNotFoundException::new);
 	}
 }

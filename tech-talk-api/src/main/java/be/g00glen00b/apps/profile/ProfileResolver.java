@@ -15,12 +15,12 @@ public class ProfileResolver implements GraphQLResolver<Profile> {
     private static final String GRAVATAR_API = "https://www.gravatar.com/avatar/{0}?d=mp";
     private PostRepository postRepository;
 
-    public Integer getAnswerCount(Profile profile) {
-        return postRepository.countPostsByProfileAndAnswer(profile.getId(), true);
+    public Integer getAnswerCount(Profile author) {
+        return postRepository.countByAuthorIdAndAnswer(author.getId(), true);
     }
 
     public Integer getQuestionCount(Profile profile) {
-        return postRepository.countPostsByProfileAndAnswer(profile.getId(), false);
+        return postRepository.countByAuthorIdAndAnswer(profile.getId(), false);
     }
 
     public String getAvatar(Profile profile) {

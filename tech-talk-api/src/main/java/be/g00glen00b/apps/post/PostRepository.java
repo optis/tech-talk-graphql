@@ -1,12 +1,12 @@
 package be.g00glen00b.apps.post;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-public interface PostRepository extends JpaRepository<Post, Long> {
-    @Query("select count(p) from Post p inner join p.question q where q.id = ?1 and p.answer = ?2")
-    int countPostsByQuestionAndAnswer(Long questionId, Boolean answer);
+import java.util.List;
 
-    @Query("select count(p) from Post p inner join p.author a where a.id = ?1 and p.answer = ?2")
-    int countPostsByProfileAndAnswer(Long profileId, Boolean answer);
+public interface PostRepository extends MongoRepository<Post, String> {
+    int countByQuestionIdAndAnswer(String questionId, Boolean answer);
+    int countByAuthorIdAndAnswer(String authorId, Boolean answer);
+    List<Post> findByQuestionIdAndAnswer(String questionId, Boolean answer);
 }

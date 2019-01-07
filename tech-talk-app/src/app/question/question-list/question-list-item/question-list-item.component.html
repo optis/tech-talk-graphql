@@ -1,6 +1,5 @@
 <article>
   <h2><a routerLink="/questions/{{question.id}}">{{question.title}}</a></h2>
-  <p><a routerLink="/questions/{{question.id}}">{{question.firstPost.excerpt}}</a></p>
   <footer>
     <a routerLink="/people/{{question.firstPost.author.id}}">
       <img [src]="question.firstPost.author.avatar" />

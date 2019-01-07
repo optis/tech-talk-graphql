@@ -8,7 +8,6 @@ export const QuestionListQuery = gql`query QuestionList($pagination: Pagination!
     answerCount
     firstPost {
       id
-      excerpt
       postedAt
       author {
         id

@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class PostInput {
-    private Long questionId;
+    private String questionId;
     private String content;
 }

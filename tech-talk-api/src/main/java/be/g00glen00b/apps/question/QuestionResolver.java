@@ -17,22 +17,14 @@ public class QuestionResolver implements GraphQLResolver<Question> {
     private PostRepository postRepository;
 
     public Post getFirstPost(Question question) {
-        return Stream.of(question)
-            .map(Question::getPosts)
-            .flatMap(Collection::stream)
-            .filter(post -> !post.isAnswer())
-            .findAny().orElse(null);
+        return postRepository.findByQuestionIdAndAnswer(question.getId(), false).stream().findAny().orElse(null);
     }
 
     public List<Post> getAnswers(Question question) {
-        return Stream.of(question)
-            .map(Question::getPosts)
-            .flatMap(Collection::stream)
-            .filter(Post::isAnswer)
-            .collect(Collectors.toList());
+        return postRepository.findByQuestionIdAndAnswer(question.getId(), true);
     }
 
     public Integer getAnswerCount(Question question) {
-        return postRepository.countPostsByQuestionAndAnswer(question.getId(), true);
+        return postRepository.countByQuestionIdAndAnswer(question.getId(), true);
     }
 }

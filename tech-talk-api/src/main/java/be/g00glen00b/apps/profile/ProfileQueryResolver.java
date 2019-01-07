@@ -13,8 +13,8 @@ import java.util.List;
 public class ProfileQueryResolver implements GraphQLQueryResolver {
     private ProfileRepository profileRepository;
 
-    public Profile getProfile(Long id) {
-        return profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException(id));
+    public Profile getProfile(String id) {
+        return profileRepository.findById(id).orElseThrow(ProfileNotFoundException::new);
     }
 
     public List<Profile> getProfiles(Pagination pagination) {

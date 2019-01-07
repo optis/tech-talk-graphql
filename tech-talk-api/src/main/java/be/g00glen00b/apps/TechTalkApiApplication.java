@@ -10,3 +10,4 @@ public class TechTalkApiApplication {
         SpringApplication.run(TechTalkApiApplication.class, args);
     }
 }
+
